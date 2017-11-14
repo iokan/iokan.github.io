@@ -1,9 +1,9 @@
 @charset "UTF-8";
 @import url(font-awesome.min.css);
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
+/*@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");*/
 
 /* Reset */
-
+	
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
@@ -2207,9 +2207,9 @@
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #444;
+		background-color: rgba(255, 255, 255, 0.075);
 		border-radius: 4px;
-		border: 0;
+		border: solid 1px rgba(255, 255, 255, 0.25);
 		color: !important;
 		cursor: pointer;
 		display: inline-block;
@@ -2227,7 +2227,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: black;
+			background-color: rgba(255, 255, 255, 0.25);
 		}
 
 		input[type="submit"]:active,
@@ -2235,7 +2235,7 @@
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: #ff496e;
+			background-color: rgba(255, 255, 255, 0.25);
 		}
 
 		input[type="submit"].icon,
@@ -2413,7 +2413,7 @@
 
 			.thumbnails a:hover {
 				background-color: rgba(255, 255, 255, 0.25);
-				box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 0.5em 0 #FF6382;
+				box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 0.5em 0 #524F6C;
 			}
 
 		.thumbnails > div {
@@ -2502,17 +2502,17 @@
 			transition: opacity 0.2s ease-in-out;
 			text-decoration: none;
 			position: absolute;
-			top: 1em;
-			right: 1em;
+			top: 0.5em;
+			right: 0.5em;
 			z-index: 2;
-			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 			white-space: nowrap;
 			text-indent: 2.5em;
 			overflow: hidden;
 			width: 2.5em;
 			height: 2.5em;
 			display: block;
-			color: #8197B0;
+			color: black;
 		}
 
 			.poptrox-popup .closer:before {
@@ -2530,8 +2530,8 @@
 				position: relative;
 				text-indent: 0;
 				border-radius: 100%;
-				box-shadow: inset 0 0 0 1px #ffffff;
-				color: #8197B0 !important;
+				box-shadow: inset 0 0 0 1px black;
+				color: black;
 				width: 2.5em;
 				height: 2.5em;
 				line-height: 2.5em;
