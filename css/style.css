@@ -42,7 +42,9 @@ aside .avatar {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: white;
+    background: url("../img/avatar.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    border: 5px solid #ffffff;
 }
 
 nav {
@@ -51,6 +53,7 @@ nav {
     top: 0;
     width: 300px;
     height: 100%;
+    padding-top: 50px;
     background: url("../img/bg.jpg") 50% 0 no-repeat;
     background-size: cover;
     display: flex;
@@ -107,18 +110,24 @@ article h2 {
     padding: 20px 0;
 }
 
-.text-bg {
+.words {
     position: absolute;
-    left: 0;
+    left: 50%;
     top: 0;
+    transform: translateX(-50%);
     width: 100%;
+    max-width: 600px;
     height: 100%;
-    opacity: 0.05;
-    font-size: 8rem;
-    font-weight: normal;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.words span {
+    opacity: 0.05;
+    font-size: 8rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /*footer*/
