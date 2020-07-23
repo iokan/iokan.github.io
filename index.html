@@ -10,68 +10,29 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="MobileOptimized" content="width"/>
     <meta name="HandheldFriendly" content="true"/>
-    <title>Portfolio</title>
+    <title>Портфолио</title>
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <!--<link rel="shortcut icon" type="image/x-icon" href="img/ico.png"/>-->
 </head>
 <body>
 
-<div class="wrapper">
-
-    <aside>
-        <nav>
-
-            <div class="avatar"></div>
-
-            <progress value="0">
-                <div class="progress-container">
-                    <span class="progress-bar"></span>
-                </div>
-            </progress>
-
-            <ul>
-                <li>
-                    <a class="link active" href="#about">О себе
-                        <div class="ico">
-                            <i class="fas fa-fingerprint"></i>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="link" href="#skills">Навыки
-                        <div class="ico">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="link" href="#experience">Опыт
-                        <div class="ico">
-                            <i class="fas fa-weight-hanging"></i>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="link" href="#work">Мои работы
-                        <div class="ico">
-                            <i class="fas fa-hammer"></i>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="link" href="#contacts">Контакты
-                        <div class="ico">
-                            <i class="fas fa-address-card"></i>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+<div id="app">
 
     <main>
-        <article id="about">
+
+        <section id="intro" class="intro">
+            <video class="intro__media" src="./video/intro_6.mp4" autoplay muted loop></video>
+            <div class="intro__content">
+                <h1>
+                    <span>Frontend_</span>
+                    <span>Developer</span>
+                </h1>
+            </div>
+        </section>
+
+        <section id="about">
             <h2>О себе
                 <div class="words">
                     <span>A</span>
@@ -85,9 +46,9 @@
                 </div>
             </h2>
             <p></p>
-        </article>
+        </section>
 
-        <article id="skills">
+        <section id="skills">
             <h2>Навыки
                 <div class="words">
                     <span>S</span>
@@ -98,9 +59,9 @@
                     <span>s</span>
                 </div>
             </h2>
-        </article>
+        </section>
 
-        <article id="experience">
+        <section id="experience">
             <h2>Опыт
                 <div class="words">
                     <span>E</span>
@@ -115,9 +76,9 @@
                     <span>e</span>
                 </div>
             </h2>
-        </article>
+        </section>
 
-        <article id="work">
+        <section id="work">
             <h2>Мои работы
                 <div class="words">
                     <span>W</span>
@@ -126,9 +87,9 @@
                     <span>k</span>
                 </div>
             </h2>
-        </article>
+        </section>
 
-        <article id="contacts">
+        <section id="contacts">
             <h2>Контакты
                 <div class="words">
                     <span>C</span>
@@ -141,7 +102,7 @@
                     <span>s</span>
                 </div>
             </h2>
-        </article>
+        </section>
 
         <footer>
             <p>Copyright &copy; 2019 г.</p>
@@ -150,9 +111,12 @@
     </main>
 
 </div>
+<!-- production version, optimized for size and speed -->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/fontawesome-all.min.js"></script>
-<script src="js/scroll.js"></script>
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script src="js/vue.js"></script>
 </body>
 </html>
