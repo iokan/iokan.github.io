@@ -25,15 +25,15 @@ main {
 
 section {
   width: 100%;
-  height: 100vh; }
-
-section h2 {
-  position: relative;
-  font-size: 3.5rem;
-  font-weight: normal;
-  text-align: center;
-  padding: 20px 0;
-  text-transform: uppercase; }
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100); }
+  section h2 {
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: normal;
+    text-align: center;
+    padding: 20px 0;
+    text-transform: uppercase; }
 
 .words {
   position: absolute;
@@ -55,18 +55,15 @@ section h2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   z-index: -1; }
-
-.words span {
-  opacity: 0.05;
-  font-size: 8rem;
-  font-weight: bold;
-  text-transform: uppercase; }
+  .words span {
+    opacity: 0.05;
+    font-size: 8rem;
+    font-weight: bold;
+    text-transform: uppercase; }
 
 /*intro*/
 .intro {
   position: relative;
-  background: #ccc url("../img/bg.jpg") 50% 50% no-repeat;
-  background-size: cover;
   overflow: hidden;
   z-index: 1; }
   .intro .intro__media {
@@ -79,7 +76,13 @@ section h2 {
     min-width: 100%;
     min-height: 100%;
     -o-object-fit: cover;
-    object-fit: cover; }
+    object-fit: cover;
+    background-image: url("../img/intro_img_1.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-animation: intro 3s step-start infinite;
+    animation: intro 3s step-start infinite; }
   .intro .intro__content {
     position: relative;
     width: 100%;
@@ -95,10 +98,8 @@ section h2 {
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       font-family: 'Rubik Mono One', sans-serif;
-      font-size: 15rem;
-      font-weight: 700;
-      color: white;
-      text-transform: uppercase; }
+      font-size: 8vw;
+      color: white; }
       .intro .intro__content h1 span {
         font-size: inherit;
         font-weight: inherit;
@@ -106,6 +107,54 @@ section h2 {
         color: inherit;
         line-height: 0.9em;
         display: block; }
+
+@-webkit-keyframes intro {
+  0% {
+    background-image: url("../img/intro_img_1.jpg"); }
+  10% {
+    background-image: url("../img/intro_img_2.jpg"); }
+  20% {
+    background-image: url("../img/intro_img_3.jpg"); }
+  30% {
+    background-image: url("../img/intro_img_4.jpg"); }
+  40% {
+    background-image: url("../img/intro_img_5.jpg"); }
+  50% {
+    background-image: url("../img/intro_img_6.jpg"); }
+  60% {
+    background-image: url("../img/intro_img_7.jpg"); }
+  70% {
+    background-image: url("../img/intro_img_8.jpg"); }
+  80% {
+    background-image: url("../img/intro_img_9.jpg"); }
+  90% {
+    background-image: url("../img/intro_img_10.jpg"); }
+  100% {
+    background-image: url("../img/intro_img_1.jpg"); } }
+
+@keyframes intro {
+  0% {
+    background-image: url("../img/intro_img_1.jpg"); }
+  10% {
+    background-image: url("../img/intro_img_2.jpg"); }
+  20% {
+    background-image: url("../img/intro_img_3.jpg"); }
+  30% {
+    background-image: url("../img/intro_img_4.jpg"); }
+  40% {
+    background-image: url("../img/intro_img_5.jpg"); }
+  50% {
+    background-image: url("../img/intro_img_6.jpg"); }
+  60% {
+    background-image: url("../img/intro_img_7.jpg"); }
+  70% {
+    background-image: url("../img/intro_img_8.jpg"); }
+  80% {
+    background-image: url("../img/intro_img_9.jpg"); }
+  90% {
+    background-image: url("../img/intro_img_10.jpg"); }
+  100% {
+    background-image: url("../img/intro_img_1.jpg"); } }
 
 /*footer*/
 footer {
