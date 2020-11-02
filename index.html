@@ -25,98 +25,112 @@
         <div class="preloader"></div>
 
         <section id="intro" class="intro">
-            <div class="intro__media"></div>
-<!--            <video class="intro__media" src="./video/intro_6.mp4" autoplay muted loop></video>-->
+<!--            <div class="intro__media"></div>-->
             <div class="intro__content">
                 <h1>
-                    <span>Frontend_</span>
-                    <span>Developer</span>
+                    <template  v-if="page === 'intro'">
+                        <span>Frontend_</span>
+                        <span>Developer</span>
+                    </template>
+                    <template v-else-if="page === 'about'">
+                        <span>About</span>
+                    </template>
+                    <template v-else-if="page === 'skills'">
+                        <span>skills</span>
+                    </template>
+                    <template v-else-if="page === 'experience'">
+                        <span>experience</span>
+                    </template>
+                    <template v-else-if="page === 'work'">
+                        <span>work</span>
+                    </template>
                 </h1>
             </div>
         </section>
 
-        <section id="about">
-            <h2>О себе
-                <div class="words">
-                    <span>A</span>
-                    <span>b</span>
-                    <span>o</span>
-                    <span>u</span>
-                    <span>t</span>
-                    <span> </span>
-                    <span>m</span>
-                    <span>e</span>
-                </div>
-            </h2>
-            <div class="timeline"></div>
-            <p>Таймлайн</p>
-            <p>Вся жизнь</p>
-            <p>Семья*</p>
-            <p>Карьера*</p>
-            <p>Хобби*</p>
-        </section>
+        <transition mode="out-in" appear>
 
-        <section id="skills">
-            <h2>Навыки
-                <div class="words">
-                    <span>S</span>
-                    <span>k</span>
-                    <span>i</span>
-                    <span>l</span>
-                    <span>l</span>
-                    <span>s</span>
-                </div>
-            </h2>
-        </section>
+            <section id="about" class="about"
+                     v-if="page === 'about'"
+                     key="about">
+                <h2>О себе
+                    <div class="words">
+                        <span>A</span>
+                        <span>b</span>
+                        <span>o</span>
+                        <span>u</span>
+                        <span>t</span>
+                        <span> </span>
+                        <span>m</span>
+                        <span>e</span>
+                    </div>
+                </h2>
+                <div class="timeline"></div>
+                <p>Таймлайн</p>
+                <p>Вся жизнь</p>
+                <p>Семья*</p>
+                <p>Карьера*</p>
+                <p>Хобби*</p>
+            </section>
 
-        <section id="experience">
-            <h2>Опыт
-                <div class="words">
-                    <span>E</span>
-                    <span>x</span>
-                    <span>p</span>
-                    <span>e</span>
-                    <span>r</span>
-                    <span>i</span>
-                    <span>e</span>
-                    <span>n</span>
-                    <span>c</span>
-                    <span>e</span>
-                </div>
-            </h2>
+            <section id="skills" class="skills"
+                     v-else-if="page === 'skills'"
+                     key="skills">
+                <h2>Навыки
+                    <div class="words">
+                        <span>S</span>
+                        <span>k</span>
+                        <span>i</span>
+                        <span>l</span>
+                        <span>l</span>
+                        <span>s</span>
+                    </div>
+                </h2>
+            </section>
 
-        </section>
+            <section id="experience" class="experience"
+                     v-else-if="page === 'experience'"
+                     key="experience">
+                <h2>Опыт
+                    <div class="words">
+                        <span>E</span>
+                        <span>x</span>
+                        <span>p</span>
+                        <span>e</span>
+                        <span>r</span>
+                        <span>i</span>
+                        <span>e</span>
+                        <span>n</span>
+                        <span>c</span>
+                        <span>e</span>
+                    </div>
+                </h2>
 
-        <section id="work">
-            <h2>Мои работы
-                <div class="words">
-                    <span>W</span>
-                    <span>o</span>
-                    <span>r</span>
-                    <span>k</span>
-                </div>
-            </h2>
-            <iframe src="http://bar-in.club/" width="600" height="500"></iframe>
-            <iframe src="https://andrew-r.ru/" width="600" height="500"></iframe>
-        </section>
+            </section>
 
-        <section id="contacts">
-            <h2>Контакты
-                <div class="words">
-                    <span>C</span>
-                    <span>o</span>
-                    <span>n</span>
-                    <span></span>
-                    <span>a</span>
-                    <span>c</span>
-                    <span>t</span>
-                    <span>s</span>
-                </div>
-            </h2>
-        </section>
+            <section id="work" class="work"
+                     v-else-if="page === 'work'"
+                     key="work">
+                <h2>Мои работы
+                    <div class="words">
+                        <span>W</span>
+                        <span>o</span>
+                        <span>r</span>
+                        <span>k</span>
+                    </div>
+                </h2>
+<!--                <iframe src="http://bar-in.club/" width="600" height="500"></iframe>-->
+<!--                <iframe src="https://andrew-r.ru/" width="600" height="500"></iframe>-->
+            </section>
+
+        </transition>
 
         <footer>
-            <p>Copyright &copy; 2020 г.</p>
+            <div class="btn" :class="{selected:page === 'intro'}" @click="page = 'intro'">intro</div>
+            <div class="btn" :class="{selected:page === 'about'}" @click="page = 'about'">about</div>
+            <div class="btn" :class="{selected:page === 'skills'}" @click="page = 'skills'">skills</div>
+            <div class="btn" :class="{selected:page === 'experience'}" @click="page = 'experience'">experience</div>
+            <div class="btn" :class="{selected:page === 'work'}" @click="page = 'work'">work</div>
         </footer>
 
     </main>
@@ -124,11 +138,9 @@
 </div>
 <!-- production version, optimized for size and speed -->
 <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
-
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-<script src="js/script.js"></script>
+<script src="js/realvh.js"></script>
 <script src="js/vue.js"></script>
 </body>
 </html>
