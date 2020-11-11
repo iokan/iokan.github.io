@@ -25,10 +25,10 @@
         <div class="preloader"></div>
 
         <section id="intro" class="intro">
-<!--            <div class="intro__media"></div>-->
+            <!--            <div class="intro__media"></div>-->
             <div class="intro__content">
                 <h1>
-                    <template  v-if="page === 'intro'">
+                    <template v-if="page === 'intro'">
                         <span>Frontend_</span>
                         <span>Developer</span>
                     </template>
@@ -53,74 +53,43 @@
             <section id="about" class="about"
                      v-if="page === 'about'"
                      key="about">
-                <h2>О себе
-                    <div class="words">
-                        <span>A</span>
-                        <span>b</span>
-                        <span>o</span>
-                        <span>u</span>
-                        <span>t</span>
-                        <span> </span>
-                        <span>m</span>
-                        <span>e</span>
+                <div>
+                    <ul>
+                        <li @click="timelineBtn === 'life'">Жизнь</li>
+                        <li @click="timelineBtn === 'family'">Семья</li>
+                        <li @click="timelineBtn === 'job'">Работа</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline__month"
+                             v-for="n in amountWeek()">
+                            <span v-if="n === 52">Год</span>
+                            <span v-else-if="n === 1040">20</span>
+                            <span v-else-if="n === 2080">40</span>
+                            <span v-else-if="n === 3120">60</span>
+                            <span v-else-if="n === 4160">80</span>
+                        </div>
                     </div>
-                </h2>
-                <div class="timeline"></div>
-                <p>Таймлайн</p>
-                <p>Вся жизнь</p>
-                <p>Семья*</p>
-                <p>Карьера*</p>
-                <p>Хобби*</p>
+                </div>
             </section>
 
             <section id="skills" class="skills"
                      v-else-if="page === 'skills'"
                      key="skills">
-                <h2>Навыки
-                    <div class="words">
-                        <span>S</span>
-                        <span>k</span>
-                        <span>i</span>
-                        <span>l</span>
-                        <span>l</span>
-                        <span>s</span>
-                    </div>
-                </h2>
+                <h2>Навыки</h2>
             </section>
 
             <section id="experience" class="experience"
                      v-else-if="page === 'experience'"
                      key="experience">
-                <h2>Опыт
-                    <div class="words">
-                        <span>E</span>
-                        <span>x</span>
-                        <span>p</span>
-                        <span>e</span>
-                        <span>r</span>
-                        <span>i</span>
-                        <span>e</span>
-                        <span>n</span>
-                        <span>c</span>
-                        <span>e</span>
-                    </div>
-                </h2>
+                <h2>Опыт</h2>
 
             </section>
 
             <section id="work" class="work"
                      v-else-if="page === 'work'"
                      key="work">
-                <h2>Мои работы
-                    <div class="words">
-                        <span>W</span>
-                        <span>o</span>
-                        <span>r</span>
-                        <span>k</span>
-                    </div>
-                </h2>
-<!--                <iframe src="http://bar-in.club/" width="600" height="500"></iframe>-->
-<!--                <iframe src="https://andrew-r.ru/" width="600" height="500"></iframe>-->
+                <h2>Мои работы</h2>
+                <!--                <iframe src="http://bar-in.club/" width="600" height="500"></iframe>-->
             </section>
 
         </transition>
@@ -141,6 +110,7 @@
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/realvh.js"></script>
+<!--<script src="js/timeline.js"></script>-->
 <script src="js/vue.js"></script>
 </body>
 </html>
