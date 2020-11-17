@@ -33,7 +33,7 @@
                         <span>Developer</span>
                     </template>
                     <template v-else-if="page === 'about'">
-                        <span>About</span>
+                        <span>About us</span>
                     </template>
                     <template v-else-if="page === 'skills'">
                         <span>skills</span>
@@ -53,22 +53,41 @@
             <section id="about" class="about"
                      v-if="page === 'about'"
                      key="about">
-                <div>
-                    <ul>
-                        <li @click="timelineBtn === 'life'">Жизнь</li>
-                        <li @click="timelineBtn === 'family'">Семья</li>
-                        <li @click="timelineBtn === 'job'">Работа</li>
-                    </ul>
-                    <div class="timeline">
-                        <div class="timeline__month"
-                             v-for="n in amountWeek()">
-                            <span v-if="n === 52">Год</span>
-                            <span v-else-if="n === 1040">20</span>
-                            <span v-else-if="n === 2080">40</span>
-                            <span v-else-if="n === 3120">60</span>
-                            <span v-else-if="n === 4160">80</span>
+                <div class="timeline">
+                    <div class="timeline__table">
+                        <div class="table__item"
+                             v-for="n in amountItem(birthDate, lifetimeDate)"
+                             :class="{
+                             life:timeline === 'life' && n <= amountItem(birthDate, currentDate),
+                             job:timeline === 'job' && n <= amountItem(birthDate, currentDate) && n >= (amountItem(birthDate, currentDate) - amountItem(workDateBuilding, currentDate)),
+                             opacity:
+                                (timelineNav === 'wedding' && n <= (amountItem(birthDate, currentDate) - amountItem(weddingDate, currentDate)))
+                                || (timelineNav === 'parent' && n <= (amountItem(birthDate, currentDate) - amountItem(birthDateDaughter, currentDate)))
+                                || (timelineNav === 'building' && n <= amountItem(birthDate, currentDate) && n >= (amountItem(birthDate, currentDate) - amountItem(workDateIt, currentDate)))
+                                || (timelineNav === 'it' && n <= amountItem(birthDate, workDateIt) && n >= (amountItem(birthDate, currentDate) - amountItem(workDateBuilding, currentDate)))
+                             }">
+                            <span v-if="n === 48">Год</span>
+                            <span v-else-if="n === 960">20</span>
+                            <span v-else-if="n === 1920">40</span>
+                            <span v-else-if="n === 2880">60</span>
+                            <span v-else-if="n === 3840">80</span>
                         </div>
+                        <div class="timeline__period">{{timelinePeriod}} {{timelinePeriodText}}</div>
                     </div>
+
+                    <nav class="timeline__nav">
+                        <div class="nav__item" @click="timeline = 'life', timelineNav = false">Жизнь</div>
+                        <template v-if="timeline === 'life'">
+                            <div class="nav__item" @click="timelineNav = 'wedding'">Женился</div>
+                            <div class="nav__item mr_auto" @click="timelineNav = 'parent'">Родилась дочка</div>
+                        </template>
+                        <template v-else>
+                            <div class="nav__item ml_auto" @click="timelineNav = 'building'">Строительство</div>
+                            <div class="nav__item" @click="timelineNav = 'it'">ИТ</div>
+                        </template>
+                        <div class="nav__item" @click="timeline = 'job', timelineNav = false">Работа</div>
+                    </nav>
+
                 </div>
             </section>
 
