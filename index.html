@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="fonts/fonts.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <!--<link rel="shortcut icon" type="image/x-icon" href="img/ico.png"/>-->
+    <!-- production version, optimized for size and speed -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
 
@@ -25,7 +29,7 @@
         <div class="preloader"></div>
 
         <section id="intro" class="intro">
-            <!--            <div class="intro__media"></div>-->
+            <div class="intro__media"></div>
             <div class="intro__content">
                 <h1>
                     <template v-if="page === 'intro'">
@@ -33,31 +37,68 @@
                         <span>Developer</span>
                     </template>
                     <template v-else-if="page === 'about'">
-                        <span>About us</span>
+                        <span>таймлайн</span>
                     </template>
                     <template v-else-if="page === 'skills'">
-                        <span>skills</span>
+                        <span>навыки</span>
                     </template>
                     <template v-else-if="page === 'experience'">
-                        <span>experience</span>
+                        <span>опыт</span>
                     </template>
                     <template v-else-if="page === 'work'">
-                        <span>work</span>
+                        <span>работы</span>
                     </template>
                 </h1>
+                <aside>
+                    <a href="https://vk.com/alexanderkopytov" target="_blank">
+                        <svg width="53" height="40" viewBox="0 0 53 40" fill="" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M52.1098 32.542C51.9685 32.2896 51.0943 30.2634 46.8877 26.0989C42.484 21.7381 43.0755 22.4462 48.3798 14.9059C51.6103 10.3137 52.9018 7.50929 52.4976 6.31041C52.1131 5.16762 49.737 5.4691 49.737 5.4691L41.8366 5.51817C41.8366 5.51817 41.2516 5.43404 40.8145 5.71098C40.3905 5.9844 40.1178 6.61539 40.1178 6.61539C40.1178 6.61539 38.8656 10.17 37.1962 13.1917C33.6764 19.5682 32.2666 19.9047 31.6914 19.5086C30.3539 18.5866 30.6891 15.7998 30.6891 13.8227C30.6891 7.6425 31.5666 5.06597 28.9769 4.39992C28.1158 4.17908 27.4849 4.03185 25.2863 4.00731C22.4665 3.97576 20.0773 4.01782 18.7266 4.72243C17.8261 5.19216 17.1327 6.2403 17.5567 6.2999C18.0792 6.37351 19.2623 6.63993 19.89 7.55136C20.7017 8.7257 20.6722 11.3688 20.6722 11.3688C20.6722 11.3688 21.1388 18.6427 19.5844 19.5471C18.5163 20.1676 17.0538 18.9021 13.9153 13.1146C12.3083 10.1524 11.0923 6.8748 11.0923 6.8748C11.0923 6.8748 10.859 6.26484 10.4416 5.93883C9.93551 5.54271 9.22565 5.41651 9.22565 5.41651L1.71294 5.46559C1.71294 5.46559 0.585712 5.50065 0.171626 6.02296C-0.19645 6.48919 0.142049 7.4497 0.142049 7.4497C0.142049 7.4497 6.0247 22.1272 12.6829 29.5273C18.7923 36.3104 25.7266 35.8652 25.7266 35.8652H28.8684C28.8684 35.8652 29.8182 35.753 30.3013 35.1956C30.7483 34.6838 30.7318 33.7233 30.7318 33.7233C30.7318 33.7233 30.6694 29.2258 32.6281 28.5633C34.5572 27.9112 37.0351 32.9101 39.661 34.8346C41.6459 36.2894 43.1544 35.9704 43.1544 35.9704L50.1774 35.8652C50.1774 35.8652 53.8516 35.6233 52.1098 32.542Z"
+                                  fill="inherit"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/alexanderkopytov/" target="_blank">
+                        <svg width="41" height="40" viewBox="0 0 41 40" fill="" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32.4313 0H8.16068C3.65328 0 0 3.65328 0 8.16068V31.8393C0 36.3467 3.65328 40 8.16068 40H32.4313C36.9387 40 40.592 36.3467 40.592 31.8393V8.16068C40.592 3.65328 36.9387 0 32.4313 0ZM20.296 29.556C15.019 29.556 10.74 25.277 10.74 20C10.74 14.723 15.019 10.444 20.296 10.444C25.5729 10.444 29.852 14.723 29.852 20C29.852 25.277 25.5729 29.556 20.296 29.556ZM32.6173 10.1987C31.4926 10.1987 30.5793 9.28541 30.5793 8.16068C30.5793 7.03594 31.4926 6.12262 32.6173 6.12262C33.7421 6.12262 34.6554 7.03594 34.6554 8.16068C34.6554 9.28541 33.7421 10.1987 32.6173 10.1987Z"
+                                  fill="inherit"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alexander-kopytov/" target="_blank">
+                        <svg width="41" height="40" viewBox="0 0 41 40" fill="" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.3315 12.8527H1.28373C0.926557 12.8527 0.637146 13.1422 0.637146 13.4992V39.3533C0.637146 39.7105 0.926557 39.9999 1.28373 39.9999H9.3315C9.68867 39.9999 9.97808 39.7105 9.97808 39.3533V13.4992C9.97808 13.1422 9.68867 12.8527 9.3315 12.8527Z"
+                                  fill="inherit"/>
+                            <path d="M5.31052 0C2.38227 0 0 2.37969 0 5.3047C0 8.23101 2.38227 10.6116 5.31052 10.6116C8.23644 10.6116 10.6168 8.23088 10.6168 5.3047C10.6169 2.37969 8.23644 0 5.31052 0Z"
+                                  fill="inherit"/>
+                            <path d="M29.8016 12.2101C26.5693 12.2101 24.1799 13.5996 22.7307 15.1784V13.4992C22.7307 13.1422 22.4412 12.8527 22.0841 12.8527H14.3769C14.0197 12.8527 13.7303 13.1422 13.7303 13.4992V39.3533C13.7303 39.7105 14.0197 39.9999 14.3769 39.9999H22.4071C22.7643 39.9999 23.0537 39.7105 23.0537 39.3533V26.5615C23.0537 22.251 24.2245 20.5717 27.2293 20.5717C30.5018 20.5717 30.7619 23.2638 30.7619 26.7833V39.3534C30.7619 39.7106 31.0513 40 31.4085 40H39.4416C39.7988 40 40.0882 39.7106 40.0882 39.3534V25.172C40.0882 18.7624 38.866 12.2101 29.8016 12.2101Z"
+                                  fill="inherit"/>
+                        </svg>
+                    </a>
+                    <a href="https://t.me/alexander_kopytov" target="_blank">
+                        <svg width="48" height="40" viewBox="0 0 48 40" fill="" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.8343 26.3627L18.0403 37.5306C19.1763 37.5306 19.6683 37.0426 20.2583 36.4566L25.5842 31.3667L36.6202 39.4486C38.6442 40.5766 40.0701 39.9826 40.6161 37.5866L47.8601 3.64279L47.8621 3.64079C48.5041 0.648808 46.7801 -0.521186 44.8081 0.21281L2.22834 16.5147C-0.677641 17.6427 -0.633641 19.2627 1.73435 19.9967L12.6203 23.3827L37.9062 7.56077C39.0962 6.77278 40.1781 7.20877 39.2881 7.99677L18.8343 26.3627Z"
+                                  fill="inherit"/>
+                        </svg>
+                    </a>
+                    <a href="tel:+79082311883">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M38.8693 29.3559L33.2871 23.7738C31.2935 21.7802 27.9044 22.5777 27.107 25.1693C26.5089 26.9637 24.5153 27.9605 22.721 27.5617C18.7338 26.5649 13.351 21.3815 12.3542 17.1949C11.7561 15.4006 12.9523 13.407 14.7466 12.809C17.3383 12.0115 18.1357 8.62237 16.1421 6.62876L10.56 1.04665C8.96509 -0.348882 6.57275 -0.348882 5.17722 1.04665L1.38936 4.83451C-2.3985 8.82173 1.78808 19.3879 11.1581 28.7578C20.528 38.1278 31.0942 42.5138 35.0814 38.5265L38.8693 34.7387C40.2649 33.1438 40.2649 30.7515 38.8693 29.3559Z"
+                                  fill="inherit"/>
+                        </svg>
+                    </a>
+                </aside>
             </div>
         </section>
 
-        <transition mode="out-in" appear>
+        <transition mode="out-in" name="page">
 
             <section id="about" class="about"
                      v-if="page === 'about'"
                      key="about">
-                <div class="timeline">
-                    <div class="timeline__table">
-                        <div class="table__item"
-                             v-for="n in amountItem(birthDate, lifetimeDate)"
-                             :class="{
+                <div class="container">
+                    <div class="timeline">
+                        <div class="timeline__table">
+                            <div class="table__item"
+                                 v-for="n in amountItem(birthDate, lifetimeDate)"
+                                 :class="{
                              life:timeline === 'life' && n <= amountItem(birthDate, currentDate),
                              job:timeline === 'job' && n <= amountItem(birthDate, currentDate) && n >= (amountItem(birthDate, currentDate) - amountItem(workDateBuilding, currentDate)),
                              opacity:
@@ -66,70 +107,144 @@
                                 || (timelineNav === 'building' && n <= amountItem(birthDate, currentDate) && n >= (amountItem(birthDate, currentDate) - amountItem(workDateIt, currentDate)))
                                 || (timelineNav === 'it' && n <= amountItem(birthDate, workDateIt) && n >= (amountItem(birthDate, currentDate) - amountItem(workDateBuilding, currentDate)))
                              }">
-                            <span v-if="n === 48">Год</span>
-                            <span v-else-if="n === 960">20</span>
-                            <span v-else-if="n === 1920">40</span>
-                            <span v-else-if="n === 2880">60</span>
-                            <span v-else-if="n === 3840">80</span>
+                                <span v-if="n === 48">Год</span>
+                                <span v-else-if="n === 960">20</span>
+                                <span v-else-if="n === 1920">40</span>
+                                <span v-else-if="n === 2880">60</span>
+                                <span v-else-if="n === 3840">80</span>
+                            </div>
+                            <div class="timeline__period">{{timelinePeriod}} {{timelinePeriodText}}</div>
                         </div>
-                        <div class="timeline__period">{{timelinePeriod}} {{timelinePeriodText}}</div>
+
+                        <nav class="timeline__nav">
+                            <ul class="nav__list nav__list_life">
+                                <li class="nav__item" @click="timeline = 'life', timelineNav = false">Жизнь</li>
+                                <transition name="shiftRight">
+                                    <ul class="nav__sublist nav__sublist_life" v-if="timeline === 'life'">
+                                        <li class="nav__item" @click="timelineNav = 'wedding'" key="wedding">Женился</li>
+                                        <li class="nav__item" @click="timelineNav = 'parent'" key="parent">Родилась дочка</li>
+                                    </ul>
+                                </transition>
+                            </ul>
+
+                            <ul class="nav__list nav__list_job">
+                                <li class="nav__item" @click="timeline = 'job', timelineNav = false">Работа</li>
+                                <transition name="shiftLeft">
+                                    <ul class="nav__sublist nav__sublist_job" v-if="timeline === 'job'">
+                                        <li class="nav__item" @click="timelineNav = 'building'"
+                                            key="building">Строительство
+                                        </li>
+                                        <li class="nav__item" @click="timelineNav = 'it'" key="it">ИТ</li>
+                                    </ul>
+                                </transition>
+                            </ul>
+
+                        </nav>
+
                     </div>
-
-                    <nav class="timeline__nav">
-                        <div class="nav__item" @click="timeline = 'life', timelineNav = false">Жизнь</div>
-                        <template v-if="timeline === 'life'">
-                            <div class="nav__item" @click="timelineNav = 'wedding'">Женился</div>
-                            <div class="nav__item mr_auto" @click="timelineNav = 'parent'">Родилась дочка</div>
-                        </template>
-                        <template v-else>
-                            <div class="nav__item ml_auto" @click="timelineNav = 'building'">Строительство</div>
-                            <div class="nav__item" @click="timelineNav = 'it'">ИТ</div>
-                        </template>
-                        <div class="nav__item" @click="timeline = 'job', timelineNav = false">Работа</div>
-                    </nav>
-
                 </div>
             </section>
 
             <section id="skills" class="skills"
                      v-else-if="page === 'skills'"
                      key="skills">
-                <h2>Навыки</h2>
+                <div class="container">
+
+                </div>
             </section>
 
             <section id="experience" class="experience"
                      v-else-if="page === 'experience'"
                      key="experience">
-                <h2>Опыт</h2>
+                <div class="container">
 
+                </div>
             </section>
 
             <section id="work" class="work"
                      v-else-if="page === 'work'"
                      key="work">
-                <h2>Мои работы</h2>
-                <!--                <iframe src="http://bar-in.club/" width="600" height="500"></iframe>-->
+                <div class="container">
+                    <a href="https://osusinn.ru/" target="_blank">О,суси</a>
+                    <a href=" https://bar-in.club/" target="_blank">Барин</a>
+                </div>
             </section>
 
         </transition>
 
         <footer>
-            <div class="btn" :class="{selected:page === 'intro'}" @click="page = 'intro'">intro</div>
-            <div class="btn" :class="{selected:page === 'about'}" @click="page = 'about'">about</div>
-            <div class="btn" :class="{selected:page === 'skills'}" @click="page = 'skills'">skills</div>
-            <div class="btn" :class="{selected:page === 'experience'}" @click="page = 'experience'">experience</div>
-            <div class="btn" :class="{selected:page === 'work'}" @click="page = 'work'">work</div>
+            <div class="btn" :class="{selected:page === 'intro'}" @click="page = 'intro'">
+                <svg height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m498.195312 222.695312c-.011718-.011718-.023437-.023437-.035156-.035156l-208.855468-208.847656c-8.902344-8.90625-20.738282-13.8125-33.328126-13.8125-12.589843 0-24.425781 4.902344-33.332031 13.808594l-208.746093 208.742187c-.070313.070313-.140626.144531-.210938.214844-18.28125 18.386719-18.25 48.21875.089844 66.558594 8.378906 8.382812 19.445312 13.238281 31.277344 13.746093.480468.046876.964843.070313 1.453124.070313h8.324219v153.699219c0 30.414062 24.746094 55.160156 55.167969 55.160156h81.710938c8.28125 0 15-6.714844 15-15v-120.5c0-13.878906 11.289062-25.167969 25.167968-25.167969h48.195313c13.878906 0 25.167969 11.289063 25.167969 25.167969v120.5c0 8.285156 6.714843 15 15 15h81.710937c30.421875 0 55.167969-24.746094 55.167969-55.160156v-153.699219h7.71875c12.585937 0 24.421875-4.902344 33.332031-13.808594 18.359375-18.371093 18.367187-48.253906.023437-66.636719zm0 0"/>
+                </svg>
+                <span>дом</span>
+            </div>
+            <div class="btn" :class="{selected:page === 'about'}" @click="page = 'about'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45.999px" height="45.999px" viewBox="0 0 45.999 45.999">
+                    <g>
+                        <path d="M39.264,6.736c-8.982-8.981-23.545-8.982-32.528,0c-8.982,8.982-8.981,23.545,0,32.528c8.982,8.98,23.545,8.981,32.528,0
+			C48.245,30.281,48.244,15.719,39.264,6.736z M25.999,33c0,1.657-1.343,3-3,3s-3-1.343-3-3V21c0-1.657,1.343-3,3-3s3,1.343,3,3V33z
+			 M22.946,15.872c-1.728,0-2.88-1.224-2.844-2.735c-0.036-1.584,1.116-2.771,2.879-2.771c1.764,0,2.88,1.188,2.917,2.771
+			C25.897,14.648,24.746,15.872,22.946,15.872z"/>
+                    </g>
+                </svg>
+                <span>таймлайн</span>
+            </div>
+            <div class="btn" :class="{selected:page === 'skills'}" @click="page = 'skills'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="942px" height="942px" viewBox="0 0 942 942">
+                    <g>
+                        <path d="M579.1,894c0,26.5,21.5,48,48,48s48-21.5,48-48v-77.5H579.2V894H579.1z"/>
+                        <path d="M579.1,48v77.5H675V48c0-26.5-21.5-48-48-48S579.1,21.5,579.1,48z"/>
+                        <path d="M423,48v77.5h96V48c0-26.5-21.5-48-48-48S423,21.5,423,48z"/>
+                        <path d="M423,894c0,26.5,21.5,48,48,48s48-21.5,48-48v-77.5h-96V894z"/>
+                        <path d="M267,48v77.5h95.9V48c0-26.5-21.5-48-48-48S267,21.5,267,48z"/>
+                        <path d="M267,894c0,26.5,21.5,48,48,48s48-21.5,48-48v-77.5h-96V894z"/>
+                        <path d="M0,627c0,26.5,21.5,48,48,48h77.5v-95.9H48C21.5,579.1,0,600.5,0,627z"/>
+                        <path d="M894,579.1h-77.5V675H894c26.5,0,48-21.5,48-48S920.5,579.1,894,579.1z"/>
+                        <path d="M0,471c0,26.5,21.5,48,48,48h77.5v-96H48C21.5,423,0,444.5,0,471z"/>
+                        <path d="M894,423h-77.5v96H894c26.5,0,48-21.5,48-48S920.5,423,894,423z"/>
+                        <path d="M0,315c0,26.5,21.5,48,48,48h77.5v-96H48C21.5,267,0,288.5,0,315z"/>
+                        <path d="M894,267h-77.5v95.9H894c26.5,0,48-21.5,48-48S920.5,267,894,267z"/>
+                        <path d="M171.6,720.4c0,27.6,22.4,50,50,50h498.8c27.6,0,50-22.4,50-50V221.6c0-27.6-22.4-50-50-50H221.6c-27.6,0-50,22.4-50,50
+			V720.4z"/>
+                    </g>
+                </svg>
+                <span>навыки</span>
+            </div>
+            <div class="btn" :class="{selected:page === 'experience'}" @click="page = 'experience'">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <g>
+                        <path d="M426.731,0H85.269C38.251,0,0,38.251,0,85.269v341.461C0,473.749,38.251,512,85.269,512h341.461
+			C473.749,512,512,473.749,512,426.731V85.269C512,38.251,473.749,0,426.731,0z M186.197,305.365
+			c8.064,8.576,7.68,22.08-0.896,30.165c-4.139,3.883-9.387,5.803-14.635,5.803c-5.675,0-11.328-2.24-15.531-6.699l-59.413-63.104
+			c-2.091-1.963-3.797-4.352-4.992-7.083c-3.371-7.829-1.835-16.896,3.989-23.104l60.416-64c8.107-8.555,21.589-8.96,30.165-0.853
+			c8.576,8.085,8.96,21.589,0.896,30.144l-46.549,49.301L186.197,305.365z M297.557,198.741l-42.667,128
+			c-2.965,8.939-11.285,14.592-20.224,14.592c-2.24,0-4.501-0.341-6.741-1.088c-11.179-3.733-17.216-15.829-13.483-26.987
+			l42.667-128c3.733-11.179,15.701-17.28,26.965-13.504C295.253,175.488,301.291,187.563,297.557,198.741z M420.416,271.083l-64,64
+			c-4.16,4.16-9.621,6.251-15.083,6.251c-5.461,0-10.923-2.091-15.083-6.251c-8.341-8.341-8.341-21.824,0-30.165L375.168,256
+			l-48.917-48.917c-8.341-8.341-8.341-21.824,0-30.165s21.824-8.341,30.165,0l64,64
+			C428.757,249.259,428.757,262.741,420.416,271.083z"/>
+                    </g>
+                </svg>
+                <span>опыт</span>
+            </div>
+            <div class="btn" :class="{selected:page === 'work'}" @click="page = 'work'">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <g>
+                        <path d="M405.845,36.12C368.013,12.49,316.198,0,256,0S143.987,12.49,106.155,36.12c-43.066,26.9-65.83,66.909-65.83,115.703
+			c0,47.681,29.143,133.791,72.518,214.274c21.917,40.665,45.191,75.223,67.307,99.935C207.447,496.534,232.967,512,256,512
+			s48.553-15.466,75.85-45.968c22.116-24.712,45.391-59.27,67.307-99.935c43.375-80.483,72.518-166.594,72.518-214.274
+			C471.675,103.029,448.911,63.021,405.845,36.12z"/>
+                    </g>
+                </svg>
+                <span>работы</span>
+            </div>
         </footer>
 
     </main>
 
 </div>
-<!-- production version, optimized for size and speed -->
-<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
-<!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/realvh.js"></script>
-<!--<script src="js/timeline.js"></script>-->
-<script src="js/vue.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
