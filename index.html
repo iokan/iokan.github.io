@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="fonts/fonts.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    <!--<link rel="shortcut icon" type="image/x-icon" href="img/ico.png"/>-->
-    <!-- production version, optimized for size and speed -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/ico.png"/> -->
     <!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- production version, optimized for size and speed -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
 </head>
 <body>
 
@@ -121,8 +121,11 @@
                                 <li class="nav__item" @click="timeline = 'life', timelineNav = false">Жизнь</li>
                                 <transition name="shiftRight">
                                     <ul class="nav__sublist nav__sublist_life" v-if="timeline === 'life'">
-                                        <li class="nav__item" @click="timelineNav = 'wedding'" key="wedding">Женился</li>
-                                        <li class="nav__item" @click="timelineNav = 'parent'" key="parent">Родилась дочка</li>
+                                        <li class="nav__item" @click="timelineNav = 'wedding'" key="wedding">Женился
+                                        </li>
+                                        <li class="nav__item" @click="timelineNav = 'parent'" key="parent">Родилась
+                                            дочка
+                                        </li>
                                     </ul>
                                 </transition>
                             </ul>
@@ -166,7 +169,8 @@
                      key="work">
                 <div class="container">
                     <a href="https://osusinn.ru/" target="_blank">О,суси</a>
-                    <a href=" https://bar-in.club/" target="_blank">Барин</a>
+                    <a href="https://bar-in.club/" target="_blank">Барин</a>
+                    <a href="" target="_blank">Сервис кальянных</a>
                 </div>
             </section>
 
@@ -229,12 +233,12 @@
                 <span>опыт</span>
             </div>
             <div class="btn" :class="{selected:page === 'work'}" @click="page = 'work'">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
                     <g>
-                        <path d="M405.845,36.12C368.013,12.49,316.198,0,256,0S143.987,12.49,106.155,36.12c-43.066,26.9-65.83,66.909-65.83,115.703
-			c0,47.681,29.143,133.791,72.518,214.274c21.917,40.665,45.191,75.223,67.307,99.935C207.447,496.534,232.967,512,256,512
-			s48.553-15.466,75.85-45.968c22.116-24.712,45.391-59.27,67.307-99.935c43.375-80.483,72.518-166.594,72.518-214.274
-			C471.675,103.029,448.911,63.021,405.845,36.12z"/>
+                        <path d="M62.688 0.00802713C50.1946 -0.215973 35.9467 6.31469 26.928 16.4454C18.3093 16.608 9.91733 20.1414 3.73867 26.32C3.37867 26.6747 3.25067 27.2054 3.408 27.6854C3.568 28.168 3.984 28.5174 4.48534 28.5894L14.7627 30.0614L13.4933 31.4827C13.0213 32.0107 13.0453 32.8134 13.5467 33.3147L30.6853 50.4534C30.944 50.712 31.2853 50.8427 31.6293 50.8427C31.9467 50.8427 32.264 50.7307 32.5173 50.504L33.9387 49.2347L35.4107 59.512C35.4827 60.0134 35.8773 60.3814 36.3547 60.5414C36.4773 60.5814 36.6053 60.6 36.736 60.6C37.1147 60.6 37.5013 60.4347 37.768 60.1707C43.8613 54.0774 47.3946 45.6854 47.5573 37.0667C57.6986 28.0294 64.2826 13.7867 63.992 1.30936C63.9733 0.600027 63.4 0.0266938 62.688 0.00802713V0.00802713ZM50.4 23.0267C49.1013 24.3254 47.3947 24.976 45.6853 24.976C43.976 24.976 42.2693 24.3254 40.9707 23.0267C38.3733 20.4267 38.3733 16.1974 40.9707 13.5974C43.5707 10.9974 47.8 10.9974 50.4 13.5974C53 16.1974 53 20.4294 50.4 23.0267Z"
+                              fill="inherit"/>
+                        <path d="M7.264 45.0799C4.41067 47.9332 0.493338 60.8239 0.0560043 62.2826C-0.0853291 62.7519 0.0453376 63.2613 0.389338 63.6079C0.645338 63.8639 0.984004 63.9999 1.33334 63.9999C1.46134 63.9999 1.58934 63.9813 1.71734 63.9439C3.176 63.5066 16.0667 59.5892 18.92 56.7359C22.1333 53.5226 22.1333 48.2932 18.92 45.0799C15.704 41.8666 10.4773 41.8692 7.264 45.0799V45.0799Z"
+                              fill="inherit"/>
                     </g>
                 </svg>
                 <span>работы</span>
