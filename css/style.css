@@ -24,7 +24,18 @@ body {
 .container {
   width: 100%;
   max-width: 100%;
-  margin: 0 auto; }
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 68px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 /*main*/
 main {
@@ -85,8 +96,8 @@ section {
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
-    -webkit-animation: intro 3s step-start infinite;
-    animation: intro 3s step-start infinite;
+    -webkit-animation: intro 15s step-start infinite;
+    animation: intro 15s step-start infinite;
     -webkit-transition: 1s;
     -o-transition: 1s;
     transition: 1s; }
@@ -195,7 +206,8 @@ section {
 
 .about .timeline {
   position: relative;
-  width: 337px; }
+  width: 337px;
+  width: 480px; }
   .about .timeline .timeline__table {
     position: relative;
     display: -webkit-box;
@@ -212,8 +224,8 @@ section {
     width: 100%; }
     .about .timeline .timeline__table .table__item {
       position: relative;
-      width: 6px;
-      height: 6px;
+      width: 9px;
+      height: 7px;
       background: #f3f3f3;
       margin: 0.5px;
       -webkit-transition: 0.25s;
